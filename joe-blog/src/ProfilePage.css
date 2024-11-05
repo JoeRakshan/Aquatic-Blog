@@ -1,0 +1,359 @@
+/* General Styles */
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+    background-color: #f0f8ff;
+    overflow-y: auto; 
+}
+  
+.profile-page {
+    text-align: center;
+}
+  
+.navbar {
+    background-color: #0077b6;
+    padding: 1rem;
+}
+  
+.navbar ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+}
+  
+.navbar li {
+    margin: 0 15px;
+}
+  
+.navbar button {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+  
+.navbar button:hover {
+    color: #ffdd57;
+}
+  
+.content-section {
+    margin-top: 2rem;
+}
+  
+.home-page h1 {
+    font-size: 2.5rem;
+    color: #023e8a;
+}
+  
+.proverb {
+    font-size: 1.5rem;
+    color: #03045e;
+    animation: fadeIn 2s ease-in-out infinite alternate;
+}
+
+/* Species Container */
+.species-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px; /* Gap between cards */
+    justify-content: center; /* Centering */
+    padding-top: 50px;   
+}
+  
+.species-card {
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    text-align: center;
+    cursor: pointer;
+    width: 300px; /* Card width */
+    height: 400px; /* Fixed height for uniformity */
+    padding: 10px; /* Padding inside the card */
+    transition: transform 0.2s; /* Animation */
+    display: flex;
+    flex-direction: column; /* Stack content vertically */
+    justify-content: space-between; /* Space out children */
+    position: relative; /* For absolute positioning of delete button */
+}
+  
+.species-card:hover {
+    transform: scale(1.05); /* Scale effect on hover */
+}
+  
+.species-image {
+    width: 100%;
+    height: 400px; /* Fixed height for images */
+    object-fit: cover; /* Maintain aspect ratio and cover the area */
+    border-radius: 8px 8px 0 0; /* Rounded top corners */
+}
+  
+.delete-button {
+    position: absolute; /* Position it absolutely within the species-card */
+    top: 10px; /* Adjusts the vertical position */
+    right: 10px; /* Aligns it to the right */
+    cursor: pointer; /* Change cursor to pointer on hover */
+    font-size: 18px; /* Adjust the font size if needed */
+    color: red; /* Change color to red for better visibility */
+    background: none; /* No background */
+    border: none; /* No border */
+    outline: none; /* Remove outline */
+}
+
+.delete-button:hover {
+    opacity: 0.7; /* Slight opacity change on hover for feedback */
+}
+
+/* Modal Styles */
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.7);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+}
+  
+.modal-content {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+    width: 80%;
+    max-width: 400px;
+}
+  
+.close {
+    cursor: pointer;
+    float: right;
+    font-size: 20px;
+}
+.species-update-page {
+    padding: 40px;
+    color: #fff;
+    background: linear-gradient(to bottom right, #0a0a0b, #09090a); /* Dark Blue Gradient */
+    text-align: center;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.about-header h1 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+    font-weight: bold;
+    animation: fadeInDown 2s ease-in-out;
+}
+
+.about-header p {
+    font-size: 1.5rem;
+    margin-bottom: 40px;
+    max-width: 600px;
+    animation: fadeInUp 2s ease-in-out;
+}
+
+.about-sections {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.about-section {
+    background: rgba(255, 255, 255, 0.1); /* Transparent White */
+    padding: 20px;
+    border-radius: 10px;
+    backdrop-filter: blur(10px); /* Glassmorphism effect */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    animation: fadeIn 1.5s ease-in-out;
+}
+
+.about-section h2 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+    color: #ffcc00; /* Gold text color */
+}
+
+.about-section p {
+    font-size: 1.2rem;
+    line-height: 1.8;
+}
+  
+/* Animation */
+@keyframes fadeIn {
+    0% { opacity: 0; transform: scale(0.95); }
+    100% { opacity: 1; transform: scale(1); }
+}
+
+
+.contact-page {
+    padding: 55px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 80vh;
+    background-color: #ffffff;
+}
+
+.contact-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding: 30px;
+    background-color: #ffffff; /* White background for the container */
+    border-radius: 15px; /* More rounded corners */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); /* Deeper shadow */
+    animation: slideIn 1s ease-in-out; /* Different animation */
+}
+
+.image-container {
+    margin-right: 40px; /* Increased margin */
+}
+
+.owner-image {
+    width: 200px; /* Fixed width for square */
+    height: 300px; /* Fixed height for square */
+    border-radius: 10px; /* Slightly rounded corners for a softer look */
+    object-fit: cover; /* Ensures the image covers the area */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Enhanced shadow */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transition for shadow */
+}
+
+.owner-image:hover {
+    transform: scale(1.1);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4); /* Shadow change on hover */
+}
+
+.info-container {
+    max-width: 650px; /* Slightly wider container */
+}
+
+.info-container h1 {
+    font-size: 2.2rem; /* Larger heading */
+    color: #00796b; /* Teal color for the heading */
+    margin-bottom: 10px; /* Added margin */
+}
+
+.info-container p {
+    font-size: 1.1rem; /* Slightly smaller text */
+    color: #004d40; /* Darker teal for text */
+    line-height: 1.6; /* Improved line height for readability */
+}
+
+.slogan-container {
+    margin-top: 25px; /* Increased margin */
+}
+
+.slogan {
+    font-size: 1.4rem; /* Slightly smaller slogan size */
+    color: #00695c; /* A lighter teal */
+    margin-bottom: 15px;
+    animation: pulse 3s ease-in-out infinite; /* Different animation for slogans */
+}
+
+/* Animations */
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes pulse {
+    0%, 100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+    50% {
+        opacity: 0.8;
+        transform: scale(1.05);
+    }
+}
+
+
+/* Mobile Styles */
+@media (max-width: 768px) {
+    .navbar ul {
+        flex-direction: column;
+    }
+    
+    .navbar li {
+        margin: 10px 0;
+    }
+    
+    .home-page h1 {
+        font-size: 2rem;
+    }
+    
+    .proverb {
+        font-size: 1.2rem;
+    }
+    
+    .species-card {
+        width: 100%; /* Full width on mobile */
+        height: auto; /* Allow height to adjust */
+    }
+    
+    .species-image {
+        height: 150px; /* Adjust image height for mobile */
+        
+    }
+}
+@media (max-width: 768px) {
+    .about-header h1 {
+        font-size: 2.5rem;
+    }
+
+    .about-header p {
+        font-size: 1.2rem;
+    }
+
+    .mission-statement p, .goal-section p, .call-to-action p {
+        font-size: 1rem;
+    }
+
+    .call-to-action button {
+        font-size: 1rem;
+    }
+}
+@media (max-width: 768px) {
+    .contact-container {
+        flex-direction: column; /* Stack on mobile */
+        text-align: center; /* Center text */
+    }
+
+    .image-container {
+        margin-bottom: 20px;
+        margin-right: 0;
+    }
+
+    .owner-image {
+        width: 150px; /* Adjust image size for mobile */
+        height: 200px; /* Maintain square shape */
+    }
+
+    .info-container h1 {
+        font-size: 1.8rem; /* Adjust heading size */
+    }
+
+    .info-container p {
+        font-size: 0.9rem; /* Adjust paragraph size */
+    }
+
+    .slogan {
+        font-size: 1.2rem; /* Adjust slogan size */
+    }
+}
